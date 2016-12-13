@@ -1,0 +1,32 @@
+This is a solution to the “Customers who bought this item also bought” problem:
+In order to execute, please follow the next steps:
+
+1. start your hadoop shell
+$ start-dfs.sh
+$ start-yarn.sh
+
+2. upload the data into the hdfs
+$ cd /usr/local/hadoop/
+$ bin/hdfs dfs -mkdir /Iot_Lab
+$ bin/hdfs dfs -put '/home/~/RecommenderSystemF/inputdata' /Iot_Lab
+
+3. execute
+$ cd /usr/local/hadoop
+
+/usr/local/hadoop$ bin/hadoop jar /home/~/RecommenderSystemF/RecommenderSystemJ.jar RecommenderSystem /Iot_Lab/Iot_Lab_InputData output
+
+4. download the output from hdfs (see: /home/~/RecommenderSystemF/part-r-00000)
+
+more Details:
+
+* compilation cmd: (you should be in the RecommenderSystemF to execute)
+$ javac -classpath $HADOOP_HOME/share/hadoop/common/hadoop-common-2.7.1.jar:$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.1.jar:$HADOOP_HOME/share/hadoop/common/lib/commons-cli-1.2.jar -d /home/~/RecommenderSystemF *.java
+
+$ hadoop version
+Hadoop 2.7.1
+Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 15ecc87ccf4a0228f35af08fc56de536e6ce657a
+Compiled by jenkins on 2015-06-29T06:04Z
+Compiled with protoc 2.5.0
+From source with checksum fc0a1a23fc1868e4d5ee7fa2b28a58a
+This command was run using /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.1.jar
+

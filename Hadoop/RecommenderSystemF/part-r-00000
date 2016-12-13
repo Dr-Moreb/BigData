@@ -1,0 +1,5 @@
+book	[book3, book2, book1]
+book1	[book2, book, book4]
+book2	[book3, book, book4, book1]
+book3	[book2, book]
+book4	[book2, book1]
